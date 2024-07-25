@@ -110,7 +110,7 @@ class main:
 
     # --Create Docx--
     doc = docx.Document("Formatted_document.docx")
-    file_name = "Updated/NDA_" + placeholder["client_company"]
+    file_name = "NDA_" + placeholder["client_company"]
 
     for para in doc.paragraphs:
       for run in para.runs:
@@ -124,9 +124,9 @@ class main:
 
     
 #   --Save And Convert--
-    doc.save(f"{file_name}.docx")
+    doc.save(f"Updated/{file_name}.docx")
     # convert(f"{file_name}.docx", f"{file_name}.pdf") --FOR WINDOWS(docx2pdf)
-    pdf_doc.LoadFromFile(f"{file_name}.docx", FileFormat.Docx)
-    pdf_doc.SaveToFile(f"{file_name}.pdf", FileFormat.PDF)
+    pdf_doc.LoadFromFile(f"Updated/{file_name}.docx", FileFormat.Docx)
+    pdf_doc.SaveToFile(f"Updated/PDF/{file_name}.pdf", FileFormat.PDF)
     pdf_doc.Close()
 

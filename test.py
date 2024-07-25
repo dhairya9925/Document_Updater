@@ -45,7 +45,7 @@ def submit_form():
 def download_file(file_name):
   global placeholder
   file_name = f"NDA_{placeholder['client_company']}.pdf"
-  filepath = "Updated"
+  filepath = "Updated/PDF"
   return send_from_directory(filepath, file_name, as_attachment=True)
 
 
