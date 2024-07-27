@@ -17,6 +17,7 @@ file_name = ""
 def index():
     return render_template('home.html')
 
+
 # ----------Fetch Data-------------
 @app.route('/submit-form', methods=['GET','POST'])
 def submit_form():

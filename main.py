@@ -1,4 +1,5 @@
 import os
+import pdf
 import docx
 from datetime import date, datetime
 from dateutil import parser
@@ -8,8 +9,8 @@ from spire.doc import Document, FileFormat
 
 os.environ["DOTNET_SYSTEM_GLOBALIZATION_INVARIANT"] = "true"
 
-pdf_doc = Document()
-
+# pdf_doc = Document()
+pdf = pdf.main()
 
 
 
@@ -125,8 +126,9 @@ class main:
     
 #   --Save And Convert--
     doc.save(f"Updated/{file_name}.docx")
+    pdf.convert_docx_to_pdf(f"Updated/{file_name}.docx", f"Updated/PDF")
     # convert(f"{file_name}.docx", f"{file_name}.pdf") --FOR WINDOWS(docx2pdf)
-    pdf_doc.LoadFromFile(f"Updated/{file_name}.docx", FileFormat.Docx)
-    pdf_doc.SaveToFile(f"Updated/PDF/{file_name}.pdf", FileFormat.PDF)
-    pdf_doc.Close()
+    # pdf_doc.LoadFromFile(f"Updated/{file_name}.docx", FileFormat.Docx)
+    # pdf_doc.SaveToFile(f"Updated/PDF/{file_name}.pdf", FileFormat.PDF)
+    # pdf_doc.Close()
 
