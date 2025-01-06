@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-600 dark:bg-gray-900 antialiased ">
+
+  <div class="flex justify-center my-6 items-center min-h-fit">
+
+    <form class="w-full max-w-4xl my-2 space-y-3" action="/submit-form" method="post"> 
+      <div class="grid grid-cols-2 gap-x-20	"> 
+        <div>
+          <label for="contract-date" class="block mb-3 underline text-3xl font-medium text-gray-900 dark:text-white"> Service Provider </label>
+        </div>
+        <div>
+          <label for="contract-date" class="block mb-3 underline text-3xl font-medium text-gray-900 dark:text-white"> Client Company </label>
+        </div>
+        <div>
+          <label for="contract-date" class="block text-l font-medium text-gray-900 dark:text-white"> Date of Contract </label>
+          <input type="date" placeholder = "dd/mm/yyyy" name="contract-date" id="contract-date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-2/3 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
+        </div>
+        <div>
+          <label for="eff-date" class="block text-l font-medium text-gray-900 dark:text-white"> Effect date </label>
+          <input type="date" placeholder = "dd/mm/yyyy" name="eff-date" id="eff-date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-2/3 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-x-20	"> 
+        <div>
+          <label for="auth-per" class="block text-l font-medium text-gray-900 dark:text-white"> Authorized person *</label>
+          <input type="text" name="auth-per" id="auth-person" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+        </div>
+        <div>
+          <label for="client-name" class="block text-l font-medium text-gray-900 dark:text-white"> Client Name: *</label>
+          <input type="text" name="client-name" id="client-name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-x-20	"> 
+        <div>
+          <label for="designation" class="block text-l font-medium text-gray-900 dark:text-white"> Authorized person's Designation *</label *</label>
+          <input type="text" name="designation" id="designation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+        </div>
+        <div>
+          <label for="client-company" class="block text-l font-medium text-gray-900 dark:text-white"> Client company *</label>
+          <input type="text" name="client-company" id="client-company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-x-20	"> 
+        <div>
+          <label for="address" class="block text-l font-medium text-gray-900 dark:text-white"> Address of company *</label>
+          <textarea type="text" name="address" id="address" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required style="line-height: 10px"></textarea>
+        </div>
+        <div>
+          <label for="client-address" class="block text-l font-medium text-gray-900 dark:text-white"> Client Company address *</label>
+          <textarea type="text" name="client-address" id="client-address" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required style="line-height: 10px"></textarea>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-x-20	"> 
+        <div></div>
+        <div>
+          <label for="client-designation" class="block text-l font-medium text-gray-900 dark:text-white"> Client's Designation (Client company) *</label>
+          <input type="text" name="client-designation" id="client-designation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+        </div>
+        
+      </div>
+      <div class="grid grid-cols-2 gap-x-20	"> 
+        <div>
+          
+        </div>
+        <div>
+          <label for="gender" class="block text-l font-medium text-gray-900 dark:text-white">Client's Gender *</label>
+          <div class="flex items-center space-x-4">
+            <input type="radio" id="male" name="gender" value="Male" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-4 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+            <label for="male" class="text-sm font-medium text-gray-900 dark:text-white">Male </label>
+
+            <input type="radio" id="female" name="gender" value="Female" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-4 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
+            <label for="female" class="text-sm font-medium text-gray-900 dark:text-white">Female </label>
+          </div>
+        </div>
+      </div>
+      <div class="flex pt-6 justify-center">
+        <a href="{{ url_for('download_file', file_name=file_name) }}">
+          <button type="submit" class="px-5 py-2.5 w-48 text-xl font-medium text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            Download
+          </button>
+          </a>
+
+        </div>
+      </div>
+    </form>
+
+  </div>
+
+
+</body>
+</html>
