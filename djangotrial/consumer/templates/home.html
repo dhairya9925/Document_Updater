@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MultiVendor MarketPlace</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#1a1a2e',
+                        darker: '#16213e',
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-dark to-darker text-white min-h-screen flex items-center justify-center">
+    <div class="container mx-auto px-4 text-center">
+        <main class="space-y-8">
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight animate-fade-in-up">
+                Welcome {{ name }} to MultiVendor MarketPlace
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto animate-fade-in-up" style="animation-delay: 0.2s;">
+                Your one-stop destination for all things multi-vendor. Join us today!
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up" style="animation-delay: 0.4s;">
+                <a href="login" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:-translate-y-1">
+                    Login
+                </a>
+                <a href="register" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 transform hover:-translate-y-1">
+                    Register
+                </a>
+            </div>
+        </main>
+        <footer class="mt-16 text-gray-400 text-sm animate-fade-in-up" style="animation-delay: 0.6s;">
+            <p>&copy; 2024 MultiVendor MarketPlace. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
