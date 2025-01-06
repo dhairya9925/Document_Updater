@@ -1,7 +1,7 @@
 from django.shortcuts import render
 import json
 import hashlib
-from .models import general
+from core.models import countryCode
 from django.views.decorators.csrf import csrf_protect
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -25,12 +25,12 @@ def insert():
             image = val["image"]
             if len(dialCodes) > 1:
                 for dialCode in dialCodes:
-                    sReg = general(country = country, dialCode = dialCode,image = image)
+                    sReg = countryCode(country = country, dialCode = dialCode,image = image)
                     sReg.save()
                     print(f"country = {country}, dialCode = {dialCode},image = {image}")
                 print("--- More than 1 dialCode ---")
             else:
-                sReg = general(country = country, dialCode = dialCodes[0],image = image)
+                sReg = countryCode(country = country, dialCode = dialCodes[0],image = image)
                 sReg.save()
                 print(f"country = {country},\ndialCode = {dialCodes[0]},\nimage = {image}\n\n")
     return 0
@@ -62,7 +62,7 @@ def login(request):
         return render(request, "Slogin.html")
 
 def register(request):
-    data = general.objects.all().values()
+    data = countryCode.objects.all().values()
     first = data[0]
     if request.method == "POST":
         temp["name"] = request.POST["name"]
@@ -72,7 +72,7 @@ def register(request):
         password = password.encode()
         password = hashlib.sha256(password)
         temp["password"] = request.POST["password"]
-        # country = general[1]
+        # country = countryCode[1]
         print("-- REQUESTED \"POST\" METHOD --")
         # usr = Seller(name = name, email = email, password = password)
         # usr.save()
