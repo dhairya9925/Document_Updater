@@ -29,14 +29,11 @@
                 Register and Start Selling
             </h2>
         </div>
-        <form class="mt-8 space-y-6" action="https://studious-computing-machine-5g49r4ww4prrcpv9r-8000.app.github.dev" method="POST">
+        <form class="mt-8 space-y-6" method="POST">
             {% csrf_token %}
             <div class="space-y-5">
                 <label for="" class="block text-sm font-medium text-gray-300">
-                    27AAACR5055K1Z7
-                </label>
-                <label for="" class="block text-sm font-medium text-gray-300">
-                    RELIANCE INDUSTRIES LIMITED
+                    27AAACR5055K1Z7            ---         RELIANCE DIGITAL
                 </label>
                 <div>
                     <label for="companyName" class="block text-sm font-medium text-gray-300">
@@ -49,7 +46,7 @@
                             placeholder="As per GST and PAN"
                             autocomplete="off">
                     </div>
-                    <p id="message1"></p>
+                    <p id="message1" name="message1"></p>
                 </div>                
 
                 <div>
@@ -57,7 +54,7 @@
                         GSTIN
                     </label>
                     <div class="mt-1">
-                        <input id="gstin" name="gstin type="text" required
+                        <input id="gstin" name="gstin" type="text" required
                             class="block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-gray-100 placeholder-gray-400
                             focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-150 ease-in-out"
                             placeholder="Enter GST number"
@@ -66,33 +63,15 @@
                 </div>
 
                 <div>
-                    <label for="store-name" class="block text-sm font-medium text-gray-300">
+                    <label for="storeName" class="block text-sm font-medium text-gray-300">
                         Store Name
                     </label>
                     <div class="mt-1">
-                        <input id="store-name" name="store-name" type="text" required
+                        <input id="storeName" name="storeName" type="text" 
                             class="block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-gray-100 placeholder-gray-400
                             focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-150 ease-in-out"
                             placeholder="Unique name displayed to buyers"
-                            autocomplete="off">
-                    </div>
-                </div>
-
-                <div>
-                    <label for="product-category" class="block text-sm font-medium text-gray-300">
-                        Primary Product Category
-                    </label>
-                    <div class="mt-1">
-                        <select id="product-category" name="product-category" required
-                            class="block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-gray-100
-                            focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-150 ease-in-out">
-                            <option value="">Select a category</option>
-                            <option value="electronics">Electronics</option>
-                            <option value="clothing">Clothing</option>
-                            <option value="home">Home & Garden</option>
-                            <option value="books">Books</option>
-                            <option value="toys">Toys & Games</option>
-                        </select>
+                            autocomplete="off" required>
                     </div>
                 </div>
 
@@ -120,7 +99,7 @@
                                 transition duration-150 ease-in-out"
                                 placeholder="pincode"
                                 autocomplete="off">
-                            <p id="message"></p>
+                            <p id="message" name="message"></p>
                         </div>
                     </div>
                 
@@ -132,7 +111,7 @@
                             <input id="city" name="city" type="text" required
                                 class="flex w-full px-3 py-2 bg-gray-600 border border-gray-600 rounded-md text-gray-100 placeholder-gray-400
                                 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-150 ease-in-out"
-                                placeholder="-city-" disabled autocomplete="off">
+                                placeholder="-city-" autocomplete="off">
                         </div>
                     </div>
                 
@@ -173,7 +152,7 @@
                 <label for="link-checkbox" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree with the <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">terms and conditions</a>.</label>
             </div>
             <div>
-                <button id="register" name="register" type="submit" disabled class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
+                <button id="register" name="register" type="submit" disabled class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md disabled:bg-gray-600 text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
                     <span class="absolute left-0 inset-y-0 flex items-center pl-3">
                         <svg class="h-5 w-5 text-blue-500 group-hover:text-blue-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
@@ -183,8 +162,10 @@
                 </button>
             </div>
         </form>
-    </div>
+    <!-- </div> -->
     <script src="../static/js/scripts.js"></script>
+
+    <!-- <script src="../static/script.js"></script> -->
 </body>
 </html>
 

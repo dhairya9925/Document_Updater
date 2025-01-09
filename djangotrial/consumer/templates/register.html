@@ -1,5 +1,5 @@
-{% comment %} 
 {% load static %}
+<!-- {% comment %} 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -136,7 +136,7 @@
         });
     </script>
 </body>
-</html> {% endcomment %}
+</html> {% endcomment %} -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -161,50 +161,67 @@
         }
     </script>
 </head>
-<body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
-    <div class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg p-8 rounded-xl shadow-2xl w-full max-w-md">
-        <h2 class="text-3xl font-bold mb-6 text-center text-gray-100">Register to EcomStore</h2>
-        <p class="text-center text-gray-300 mb-8">Welcome! Please enter your details.</p>
-        <form class="space-y-3" action="" method="post" onsubmit="return checkPasswordMatch(event)">
-            {% csrf_token %}
-            <div class="space-y-2">
-                <label for="name" class="block text-sm font-medium text-gray-300">Username</label>
-                <input type="text" id="name" name="name" required class="w-full p-2 border border-gray-600 rounded bg-gray-700 text-white focus:outline-none focus:border-blue-500">
+<body class="bg-gray-900 from-gray-900 via-gray-800 to-gray-700">
+
+    <!-- Header with two placeholder buttons -->
+    <header class="bg-gray-900 p-4 shadow-lg">
+        <div class="max-w-screen-xl mx-auto flex justify-between items-center text-white">
+            <h1 class="text-xl font-bold">EcomStore</h1>
+            <div class="space-x-2">
+                <button class="bg-blue-600 text-white px-4 py-1 rounded-md hover:bg-blue-700 transition duration-300">User</button>
+                <a href="seller/login">
+                    <button class="bg-blue-600 text-white px-4 py-1 rounded-md hover:bg-blue-700 transition duration-300">Seller</button>
+                </a>            
             </div>
-            <div class="space-y-2">
-                <label for="email" class="block text-sm font-medium text-gray-300">Email</label>
-                <input type="email" id="email" name="email" required class="w-full p-2 border border-gray-600 rounded bg-gray-700 text-white focus:outline-none focus:border-blue-500">
-            </div>
-            <div class="space-y-2">
-                <label for="password" class="block text-sm font-medium text-gray-300">Password</label>
-                <input type="password" id="password" name="password" required class="w-full p-2 border border-gray-600 rounded bg-gray-700 text-white focus:outline-none focus:border-blue-500">
-            </div>
-            <div class="space-y-2">
-                {% if messages %}
-                <ul class="messages">
-                    {% for message in messages %}
-                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
-                <label for="confirmPassword" class="block text-sm font-medium text-gray-300">Confirm Password</label>
-                <input type="password" id="confirmPassword" name="confirmPassword" required class="w-full p-2 border border-gray-600 rounded bg-gray-700 text-white focus:outline-none focus:border-blue-500">
-            </div>
-            <div class="text-center">
-                <button type="submit" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded transition">Register</button>
-            </div>
-            <div class="w-full text-right">
-                <a href="../seller/register" class="text-violet-600">Register as a Seller</a>
-            </div>
-            
-        </form>
-        <p class="mt-8 text-center text-sm text-gray-400">
-            Already have an account?
-            <a href="../login" class="font-medium text-blue-400 hover:text-blue-300 transition duration-300">
-                Login
-            </a>
-        </p>
+        </div>
+    </header>
+
+    <!-- Content with some padding to prevent overlap with the header -->
+    <div class="pt-10 pb-10 flex items-center justify-center">
+        <!-- Registration Form Section -->
+        <div class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg p-8 rounded-xl shadow-2xl w-full max-w-md">
+            <h2 class="text-3xl font-bold mb-6 text-center text-gray-100">Register to EcomStore</h2>
+            {% if message %}
+             <p id="message" name="message" class="text-red-400>{{ message }}</p>
+            {% endif %}
+            <form class="space-y-3" action="../" method="post" onsubmit="return checkPasswordMatch(event)">
+                {% csrf_token %}
+                <div class="space-y-2">
+                    <label for="name" class="block text-sm font-medium text-gray-300">Username</label>
+                    <input type="text" id="name" name="name" required class="w-full p-2 border border-gray-600 rounded bg-gray-700 text-white focus:outline-none focus:border-blue-500">
+                </div>
+                <div class="space-y-2">
+                    <label for="email" class="block text-sm font-medium text-gray-300">Email</label>
+                    <input type="email" id="email" name="email" required class="w-full p-2 border border-gray-600 rounded bg-gray-700 text-white focus:outline-none focus:border-blue-500">
+                </div>
+                <div class="space-y-2">
+                    <label for="password" class="block text-sm font-medium text-gray-300">Password</label>
+                    <input type="password" id="password" name="password" required class="w-full p-2 border border-gray-600 rounded bg-gray-700 text-white focus:outline-none focus:border-blue-500">
+                </div>
+                <div class="space-y-2">
+                    {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    <label for="confirmPassword" class="block text-sm font-medium text-gray-300">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required class="w-full p-2 border border-gray-600 rounded bg-gray-700 text-white focus:outline-none focus:border-blue-500">
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded transition">Register</button>
+                </div>
+            </form>
+            <p class="mt-8 text-center text-sm text-gray-400">
+                Already have an account?
+                <a href="../login" class="font-medium text-blue-400 hover:text-blue-300 transition duration-300">
+                    Login
+                </a>
+            </p>
+        </div>
     </div>
+
     <script>
         // Function to check if password and confirm password match
 
@@ -234,7 +251,7 @@
                 // Reset form after successful submission
                 form.reset();
             });
-        });
+        });*/
     </script>
 </body>
 </html>

@@ -4,11 +4,6 @@ function updateLocationData(pincode) {
     const districtField = document.getElementById('district');
     const stateField = document.getElementById('state');
     
-    // Clear previous messages and fields
-    messageElement.textContent = '';
-    cityField.value = '';
-    districtField.value = '';
-    stateField.value = '';
 
     // Regular expression to validate pincode (6 digits)
     const pincodeRegex = /^[0-9]{6}$/;
@@ -125,9 +120,17 @@ function validateGSTIN() {
 }
 
 // Event listener for real-time GSTIN validation
-document.getElementById('gstin').addEventListener('input', validateGSTIN);
-document.getElementById('companyName').addEventListener('input', validateGSTIN);
+document.getElementById("link-checkbox").addEventListener("change", function() {
+    const registerButton = document.getElementById("register");
+    registerButton.disabled = !this.checked;
+});
+// document.getElementById('gstin').addEventListener('input', validateGSTIN);
+// document.getElementById('companyName').addEventListener('input', validateGSTIN);
 document.getElementById('pincode').addEventListener('input', function() {
     const pincode = this.value.trim();
     updateLocationData(pincode);
+});
+document.querySelector('form').addEventListener('submit', function() {
+    document.getElementById('district').disabled = false;
+    document.getElementById('state').disabled = false;
 });

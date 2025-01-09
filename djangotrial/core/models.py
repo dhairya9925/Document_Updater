@@ -1,6 +1,5 @@
 from django.db import models
 from seller.models import Seller
-from consumer.models import users
 
 # Create your models here.
 class countryCode(models.Model):
@@ -14,12 +13,15 @@ class product(models.Model):
     category = [
         ("t", "toys")
     ]
-    productName = models.CharField(max_length=250)
+    name = models.CharField(max_length=250)
     price = models.IntegerField()
     stock = models.IntegerField()
     seller = models.ForeignKey(Seller, on_delete=models.CASCADE)
     description = models.TextField()
-    productCategory = models.CharField( max_length=1, choices=category, default='t')
+    category = models.CharField( max_length=1, choices=category, default='t')
+    addedOn = models.DateTimeField(auto_now_add=True)
+    updatedOn = models.DateTimeField(auto_now=True)
+
     
     def __str__(self):
         return self.productName
@@ -34,10 +36,13 @@ class orders(models.Model):
     ]
     price = models.IntegerField()
     quantity = models.IntegerField()
-    buyer = models.ForeignKey(users, on_delete=models.CASCADE)
-    description = models.TextField()
-    orderDate = models.DateTimeField(auto_now_add=True, blank=True)
-    orderStatus = models.CharField( max_length=1, choices=status, default='p')
+    orderOn = models.DateTimeField(auto_now_add=True, blank=True)
+    status = models.CharField( max_length=1, choices=status, default='p')
+    totalItems = models.IntegerField()
+
+    # buyer = models.ForeignKey(users, on_delete=models.CASCADE)
+    products = models.ForeignKey(product, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.productName
+        return self.id
+

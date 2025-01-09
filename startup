@@ -1,6 +1,0 @@
-## TO START PROJECT ##
-django-admin startproject mysite djangotrial
-
-
-source venv/bin/activate
-cd djangotrial
